@@ -3,21 +3,19 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/TestDB.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/TestDrive.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/AdminController.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/EditEmployeeController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/controller/EmployeeController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/dao/EmployeeDAO.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/dao/EmployeeDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/model/EmployeeEntity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/service/EmployeeManager.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/service/EmployeeManagerImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/database.properties" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/messages_en.properties" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/hibernate-config.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/webapp-config.xml" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/denied.jsp" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/editEmployeeList.jsp" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.jsp" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/logout.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Employee/denied.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Employee/editEmployeeList.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Employee/login.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Employee/logout.jsp" charset="UTF-8" />
   </component>
 </project>
 

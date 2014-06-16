@@ -6,7 +6,14 @@
     <title>Spring 3 hibernate integration example on www.howtodoinjava.com</title>
 </head>
 <body>
- 
+<h3><spring:message code="label.title"/></h3>
+
+<span style="float: right">
+    <a href="?lang=en">en</a>
+    |
+    <a href="?lang=cn">cn</a>
+</span>
+
 <h2>Employee Management Screen</h2>
  <h6><a href="<c:url value='j_spring_security_logout'/>">Click here to logout</a></h6>
 <form:form method="post" action="add" commandName="employee">

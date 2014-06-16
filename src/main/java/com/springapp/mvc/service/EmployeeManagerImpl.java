@@ -10,29 +10,29 @@ import java.util.List;
 
 @Service
 public class EmployeeManagerImpl implements EmployeeManager {
-	
-	@Autowired
+
+    @Autowired
     private EmployeeDAO employeeDAO;
 
-	@Override
-	@Transactional
-	public void addEmployee(EmployeeEntity employee) {
-		employeeDAO.addEmployee(employee);
-	}
+    @Override
+    @Transactional
+    public void addEmployee(EmployeeEntity employee) {
+        employeeDAO.addEmployee(employee);
+    }
 
-	@Override
-	@Transactional
-	public List<EmployeeEntity> getAllEmployees() {
-		return employeeDAO.getAllEmployees();
-	}
+    @Override
+    @Transactional
+    public List<EmployeeEntity> getAllEmployees() {
+        return employeeDAO.getAllEmployees();
+    }
 
-	@Override
-	@Transactional
-	public void deleteEmployee(Integer employeeId) {
-		employeeDAO.deleteEmployee(employeeId);
-	}
+    @Override
+    @Transactional
+    public void deleteEmployee(Integer employeeId) {
+        employeeDAO.deleteEmployee(employeeId);
+    }
 
-	public void setEmployeeDAO(EmployeeDAO employeeDAO) {
-		this.employeeDAO = employeeDAO;
-	}
+    public void setEmployeeDAO(EmployeeDAO employeeDAO) {
+        this.employeeDAO = employeeDAO;
+    }
 }
