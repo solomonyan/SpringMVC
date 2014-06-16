@@ -7,14 +7,35 @@
 	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
     <http auto-config="true">
-        <intercept-url pattern="/admin**" access="ROLE_USER" />
+        <intercept-url pattern="/admin**" access="ROLE_ADMIN" />
+        <!--<form-login-->
+                <!--login-page="/login"-->
+                <!--default-target-url="/admin"-->
+                <!--authentication-failure-url="/accessdenied"-->
+                <!--username-parameter="username"-->
+                <!--password-parameter="password" />-->
+        <!--<logout logout-success-url="/employee" />-->
     </http>
 
     <authentication-manager>
         <authentication-provider>
-            <user-service>
-                <user name="solomon" password="123" authorities="ROLE_USER" />
-            </user-service>
+            <!--<user-service>-->
+                <!--<user name="solomon" password="123" authorities="ROLE_USER" />-->
+            <!--</user-service>-->
+            <jdbc-user-service data-source-ref="dataSource"
+
+                               users-by-username-query="
+		     SELECT USERNAME, PASSWORD, CASE ENABLED WHEN 1 THEN 'true' ELSE 'false' END 'ENABLED'
+		     FROM TBL_USERS
+		     WHERE USERNAME=?;"
+
+                               authorities-by-username-query="
+		    SELECT u.USERNAME, r.ROLENAME
+			FROM TBL_USERS u, TBL_USER_ROLE r
+			WHERE u.ID = r.USERID
+			AND u.USERNAME=?;"
+
+                    />
         </authentication-provider>
     </authentication-manager>
 

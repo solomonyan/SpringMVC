@@ -23,10 +23,7 @@ public class HelloController {
         model.addAttribute("message", "This is protected page!");
 
         return "admin";
+    }
 
-    }
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login(ModelMap model) {
-        return "login";
-    }
+
 }
