@@ -1,17 +1,25 @@
 package com.springapp.mvc.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.*;
 
 /**
  * Created by solomonyan on 14/6/14.
  */
 @Entity
 @Table(name = "EMPLOYEE", schema = "", catalog = "test")
-public class EmployeeEntity {
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlRootElement(name = "Employee")
+public class Employee {
+    @XmlAttribute(name = "id")
     private int id;
+    @XmlElement(name = "firstName")
     private String firstname;
+    @XmlElement(name = "lastname")
     private String lastname;
+    @XmlElement(name = "email")
     private String email;
+    @XmlElement(name = "telephone")
     private String telephone;
 
     @Id
@@ -69,7 +77,7 @@ public class EmployeeEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        EmployeeEntity that = (EmployeeEntity) o;
+        Employee that = (Employee) o;
 
         if (id != that.id) return false;
         if (email != null ? !email.equals(that.email) : that.email != null) return false;

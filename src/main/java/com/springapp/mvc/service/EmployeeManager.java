@@ -1,13 +1,13 @@
 package com.springapp.mvc.service;
 
-import com.springapp.mvc.model.EmployeeEntity;
+import com.springapp.mvc.model.Employee;
 
 import java.util.List;
 
 public interface EmployeeManager {
-    public void addEmployee(EmployeeEntity employee);
+    public void addEmployee(Employee employee);
 
-    public List<EmployeeEntity> getAllEmployees();
+    public List<Employee> getAllEmployees();
 
     public void deleteEmployee(Integer employeeId);
 }

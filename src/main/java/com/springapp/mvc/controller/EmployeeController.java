@@ -1,6 +1,6 @@
 package com.springapp.mvc.controller;
 
-import com.springapp.mvc.model.EmployeeEntity;
+import com.springapp.mvc.model.Employee;
 import com.springapp.mvc.service.EmployeeManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+@PreAuthorize("hasRole('ROLE_ADMIN')")
+@RequestMapping(value = "employee")
 public class EmployeeController {
 
     @Autowired
@@ -22,29 +24,28 @@ public class EmployeeController {
         this.employeeManager = employeeManager;
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @RequestMapping(value = "employee", method = RequestMethod.GET)
+    @RequestMapping( method = RequestMethod.GET)
     public String defaultPage(ModelMap map) {
         return "redirect:employee/list";
     }
 
-    @RequestMapping(value = "employee/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String listEmployees(ModelMap map) {
 
-        map.addAttribute("employee", new EmployeeEntity());
+        map.addAttribute("employee", new Employee());
         map.addAttribute("employeeList", employeeManager.getAllEmployees());
         return "Employee/editEmployeeList";
     }
 
-    @RequestMapping(value = "employee/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addEmployee(
-            @ModelAttribute(value = "employee") EmployeeEntity employee,
+            @ModelAttribute(value = "employee") Employee employee,
             BindingResult result) {
         employeeManager.addEmployee(employee);
         return "redirect:employee/list";
     }
 
-    @RequestMapping("employee/delete/{employeeId}")
+    @RequestMapping("/delete/{employeeId}")
     public String deleteEmplyee(@PathVariable("employeeId") Integer employeeId) {
         employeeManager.deleteEmployee(employeeId);
         return "redirect:employee/list";

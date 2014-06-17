@@ -1,7 +1,7 @@
 package com.springapp.mvc.service;
 
 import com.springapp.mvc.dao.EmployeeDAO;
-import com.springapp.mvc.model.EmployeeEntity;
+import com.springapp.mvc.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,13 +16,13 @@ public class EmployeeManagerImpl implements EmployeeManager {
 
     @Override
     @Transactional
-    public void addEmployee(EmployeeEntity employee) {
+    public void addEmployee(Employee employee) {
         employeeDAO.addEmployee(employee);
     }
 
     @Override
     @Transactional
-    public List<EmployeeEntity> getAllEmployees() {
+    public List<Employee> getAllEmployees() {
         return employeeDAO.getAllEmployees();
     }
 
