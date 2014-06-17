@@ -14,14 +14,15 @@ import javax.ws.rs.core.Response;
 /**
  * Created by solomonyan on 17/6/14.
  */
-@Path("/api")
+@Component
+@Path("/employee")
 public class EmployeeAPI {
 
-//    @Autowired
-//    private EmployeeManager employeeManager;
+    @Autowired
+    private EmployeeManager employeeManager;
 
     @GET
-    @Path("/employee/{id}")
+    @Path("/{id}")
     @Produces("application/json")
     public Response getUserById(@PathParam("id") Integer id)
     {
@@ -34,11 +35,11 @@ public class EmployeeAPI {
         return Response.status(200).entity(employee).build();
     }
 
-//    @GET
-//    @Path("/employee/")
-//    @Produces("application/json")
-//    public Response getAllUsers()
-//    {
-//        return Response.status(200).entity(employeeManager.getAllEmployees()).build();
-//    }
+    @GET
+    @Path("/all/")
+    @Produces("application/json")
+    public Response getAllUsers()
+    {
+        return Response.status(200).entity(employeeManager.getAllEmployees()).build();
+    }
 }
