@@ -10,4 +10,6 @@ public interface EmployeeManager {
     public List<Employee> getAllEmployees();
 
     public void deleteEmployee(Integer employeeId);
+
+    public List<Employee> getRangeOfEmployees(int from, int to);
 }

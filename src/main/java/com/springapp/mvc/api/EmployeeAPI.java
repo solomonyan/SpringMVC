@@ -6,11 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+
 /**
  * Created by solomonyan on 17/6/14.
  */
@@ -24,8 +22,7 @@ public class EmployeeAPI {
     @GET
     @Path("/{id}")
     @Produces("application/json")
-    public Response getUserById(@PathParam("id") Integer id)
-    {
+    public Response getUserById(@PathParam("id") Integer id) {
         Employee employee = new Employee();
         employee.setId(id);
         employee.setFirstname("FirstName");
@@ -38,8 +35,16 @@ public class EmployeeAPI {
     @GET
     @Path("/all/")
     @Produces("application/json")
-    public Response getAllUsers()
-    {
+    public Response getAllUsers() {
         return Response.status(200).entity(employeeManager.getAllEmployees()).build();
+    }
+
+    @GET
+    @Path("/range/")
+    @Produces("application/json")
+    public Response getUserByQuery(
+            @QueryParam("from") int from,
+            @QueryParam("to") int to) {
+        return Response.status(200).entity(employeeManager.getRangeOfEmployees(from,to)).build();
     }
 }

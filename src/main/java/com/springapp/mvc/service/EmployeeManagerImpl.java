@@ -32,6 +32,12 @@ public class EmployeeManagerImpl implements EmployeeManager {
         employeeDAO.deleteEmployee(employeeId);
     }
 
+    @Override
+    @Transactional
+    public List<Employee> getRangeOfEmployees(int from, int to) {
+        return employeeDAO.getRangeOfEmployees(from,to);
+    }
+
     public void setEmployeeDAO(EmployeeDAO employeeDAO) {
         this.employeeDAO = employeeDAO;
     }

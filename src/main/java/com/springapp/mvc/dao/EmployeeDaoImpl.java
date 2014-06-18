@@ -33,5 +33,8 @@ public class EmployeeDaoImpl implements EmployeeDAO {
         }
     }
 
-
+    @Override
+    public List<Employee> getRangeOfEmployees(int from, int to) {
+        return this.sessionFactory.getCurrentSession().createQuery("from Employee where id between " + from +" and " + to).list();
+    }
 }
